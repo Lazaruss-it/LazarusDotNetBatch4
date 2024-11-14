@@ -19,7 +19,7 @@ namespace LazarusDotNetBatch4.ConsoleApp
         };
         public void Read()
         {
-            
+
 
             SqlConnection connection = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
 
@@ -70,7 +70,7 @@ namespace LazarusDotNetBatch4.ConsoleApp
 
             connection.Close();
 
-            if(dt.Rows.Count == 0 )
+            if (dt.Rows.Count == 0)
             {
                 Console.WriteLine("No data found");
                 return;
@@ -78,14 +78,14 @@ namespace LazarusDotNetBatch4.ConsoleApp
 
             DataRow dr = dt.Rows[0];
 
-            
+
             Console.WriteLine("Blog Id => " + dr["BlogId"]);
             Console.WriteLine("Blog Title => " + dr["BlogTitle"]);
             Console.WriteLine("Blog Author => " + dr["BlogAuthor"]);
             Console.WriteLine("Blog Content => " + dr["BlogContent"]);
 
             Console.WriteLine("-------");
-            
+
 
         }
 
@@ -109,7 +109,7 @@ namespace LazarusDotNetBatch4.ConsoleApp
             cmd.Parameters.AddWithValue("@BlogAuthor", author);
             cmd.Parameters.AddWithValue("@BlogContent", content);
             int result = cmd.ExecuteNonQuery();
-            
+
             connection.Close();
 
             string message = result > 0 ? "Saving Successful" : "Unsuccessful.";
@@ -157,7 +157,7 @@ namespace LazarusDotNetBatch4.ConsoleApp
 
             int result = cmd.ExecuteNonQuery();
 
-            Console.WriteLine("result value is " + result );
+            Console.WriteLine("result value is " + result);
 
             connection.Close();
 

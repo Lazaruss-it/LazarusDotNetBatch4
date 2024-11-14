@@ -6,3 +6,7 @@
 
 ### Yesterday Finished Ado.Net Read
 ### Ado.Net CRUD
+
+Console App
+Ado.Net => CRUD
+14/ 11/ 2024 => Dapper CRUD
