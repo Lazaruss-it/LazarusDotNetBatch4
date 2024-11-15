@@ -20,9 +20,11 @@ Console.WriteLine("Hello from My Ordinary World.");
 
 
 // Dapper CRUD
-DapperExample dapperExample = new DapperExample();
-dapperExample.Run();
+// DapperExample dapperExample = new DapperExample();
+// dapperExample.Run();
 
-
+// EFCore CRUD
+EFCoreExample efCoreExample = new EFCoreExample();
+efCoreExample.Run();
 
 Console.ReadKey();
