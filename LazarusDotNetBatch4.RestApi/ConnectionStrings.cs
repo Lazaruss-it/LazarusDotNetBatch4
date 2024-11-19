@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LazarusDotNetBatch4.ConsoleApp
+namespace LazarusDotNetBatch4.RestApi
 {
     internal static class ConnectionStrings
     {
@@ -15,6 +15,7 @@ namespace LazarusDotNetBatch4.ConsoleApp
             InitialCatalog = "DotNetTrainingBatch4",
             UserID = "sa",
             Password = "sa@123",
+            TrustServerCertificate = true,
         };
 
     }

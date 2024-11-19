@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LazarusDotNetBatch4.ConsoleApp.Dtos;
 
-namespace LazarusDotNetBatch4.ConsoleApp
+namespace LazarusDotNetBatch4.ConsoleApp.EFCoreExamples
 {
     internal class EFCoreExample
     {
@@ -38,7 +39,7 @@ namespace LazarusDotNetBatch4.ConsoleApp
         private void Edit(int id)
         {
             var item = db.Blogs.FirstOrDefault(x => x.BlogId == id);
-            if(item is null)
+            if (item is null)
             {
                 Console.WriteLine("No Data Found.");
                 return;
@@ -50,7 +51,7 @@ namespace LazarusDotNetBatch4.ConsoleApp
             Console.WriteLine(item.BlogContent);
         }
 
-        public void Create( string title, string author, string content)
+        public void Create(string title, string author, string content)
         {
             var item = new BlogDto
             {
@@ -66,9 +67,9 @@ namespace LazarusDotNetBatch4.ConsoleApp
             Console.WriteLine(message);
         }
 
-        public void Update (int id , string title, string author, string content)
+        public void Update(int id, string title, string author, string content)
         {
-            var item = db.Blogs.FirstOrDefault (x => x.BlogId == id);
+            var item = db.Blogs.FirstOrDefault(x => x.BlogId == id);
             if (item is null)
             {
                 Console.WriteLine("No Data Found");
@@ -88,7 +89,7 @@ namespace LazarusDotNetBatch4.ConsoleApp
         public void Delete(int id)
         {
             var item = db.Blogs.FirstOrDefault(x => x.BlogId == id);
-            if(item is null)
+            if (item is null)
             {
                 Console.WriteLine("No Data Found.");
                 return;

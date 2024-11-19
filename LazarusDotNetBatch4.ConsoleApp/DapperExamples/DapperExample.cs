@@ -1,4 +1,6 @@
 ﻿using Dapper;
+using LazarusDotNetBatch4.ConsoleApp.Dtos;
+using LazarusDotNetBatch4.ConsoleApp.Services;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -7,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LazarusDotNetBatch4.ConsoleApp
+namespace LazarusDotNetBatch4.ConsoleApp.DapperExamples
 {
     internal class DapperExample
     {
@@ -17,7 +19,7 @@ namespace LazarusDotNetBatch4.ConsoleApp
             // Read();
             // Edit(1);
             // Edit(20);
-            // Create("ီtest", "ORM", "This is my C# .Net.");
+            // Create("test", "ORM", "This is my C# .Net.");
             // Update(12, "dapper", "C#", "ORM");
             Delete(13);
         }
@@ -26,8 +28,8 @@ namespace LazarusDotNetBatch4.ConsoleApp
         {
             using IDbConnection db = new SqlConnection(ConnectionStrings.sqlConnectionStringBuilder.ConnectionString);
             List<BlogDto> lst = db.Query<BlogDto>("select * from Tbl_Blog").ToList();
-            
-            foreach(BlogDto item in lst)
+
+            foreach (BlogDto item in lst)
             {
                 Console.WriteLine(item.BlogId);
                 Console.WriteLine(item.BlogTitle);
@@ -35,14 +37,14 @@ namespace LazarusDotNetBatch4.ConsoleApp
                 Console.WriteLine(item.BlogContent);
                 Console.WriteLine("------");
             }
-            
+
         }
 
         public void Edit(int id)
         {
             using IDbConnection db = new SqlConnection(ConnectionStrings.sqlConnectionStringBuilder.ConnectionString);
-            var item = db.Query<BlogDto>("select * from Tbl_Blog where BlogId = @BlogId", new BlogDto { BlogId = id}).FirstOrDefault();
-            if(item is null)
+            var item = db.Query<BlogDto>("select * from Tbl_Blog where BlogId = @BlogId", new BlogDto { BlogId = id }).FirstOrDefault();
+            if (item is null)
             {
                 Console.WriteLine("No data Found.");
                 return;
@@ -75,8 +77,8 @@ namespace LazarusDotNetBatch4.ConsoleApp
 			@BlogContent
 		   )";
             using IDbConnection db = new SqlConnection(ConnectionStrings.sqlConnectionStringBuilder.ConnectionString);
-;           int result = db.Execute(query, item);
-            if(result == 1)
+            int result = db.Execute(query, item);
+            if (result == 1)
             {
                 Console.WriteLine("Completed Created.");
             }
@@ -84,10 +86,10 @@ namespace LazarusDotNetBatch4.ConsoleApp
             {
                 Console.WriteLine("You need to create one.");
             }
-            
+
         }
 
-        public void Update(int id , string title, string author, string content)
+        public void Update(int id, string title, string author, string content)
         {
             var item = new BlogDto
             {

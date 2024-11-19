@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LazarusDotNetBatch4.ConsoleApp
+namespace LazarusDotNetBatch4.ConsoleApp.AdoDotNetExamples
 {
     internal class AdoDotNetExample
     {

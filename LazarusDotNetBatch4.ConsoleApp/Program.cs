@@ -1,5 +1,4 @@
-﻿
-using LazarusDotNetBatch4.ConsoleApp;
+﻿using LazarusDotNetBatch4.ConsoleApp.EFCoreExamples;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -26,5 +25,7 @@ Console.WriteLine("Hello from My Ordinary World.");
 // EFCore CRUD
 EFCoreExample efCoreExample = new EFCoreExample();
 efCoreExample.Run();
+
+
 
 Console.ReadKey();
