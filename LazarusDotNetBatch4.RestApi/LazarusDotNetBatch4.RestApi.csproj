@@ -15,4 +15,8 @@
 	 <PackageReference Include="Dapper" Version="2.1.35" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\LazarusDotNetBatch4.Shared\LazarusDotNetBatch4.Shared.csproj" />
+  </ItemGroup>
+
 </Project>
